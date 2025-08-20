@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veronika Petrushka — CV</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root{
+      /* Purple palette */
+      --bg-1:#0f0a1f;       /* deep indigo */
+      --bg-2:#22123d;       /* night purple */
+      --card:#1d1633;       /* card base */
+      --card-2:#281a4a;     /* card hover */
+      --accent:#8b5cf6;     /* primary violet */
+      --accent-2:#a78bfa;   /* secondary violet */
+      --text:#f5f3ff;       /* almost white with lilac tint */
+      --muted:#c7bff2;      /* soft text */
+      --line:#3a2a66;       /* dividers */
+      --chip-bg:#2a1b52;    /* skill chips */
+      --ok:#22c55e;         /* green accent for icons */
+      --shadow: 0 5px 15px rgba(30, 16, 60, .45);
+      --radius: 12px;
+    }
+
+    /* Page setup for A4 printing */
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    
+    /* Global reset */
+    *{box-sizing:border-box}
+    html,body{
+      height:100%;
+      width: 100%;
+    }
+    body{
+      margin:0;
+      font-family:"Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: var(--bg-1);
+      line-height:1.5;
+      font-size: 12px;
+    }
+
+    /* A4 page container */
+    .a4-container {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 15mm;
+      background: var(--bg-2);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Page wrapper */
+    .container{
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    /* Header */
+    .header{
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner{
+      display:flex; 
+      align-items:center; 
+      justify-content:space-between;
+      gap: 16px;
+    }
+    .name{
+      font-size: 22px;
+      font-weight:700;
+      letter-spacing:.3px;
+    }
+    .badge{ 
+      color:var(--accent-2); 
+      font-weight:600; 
+      font-size: 12px;
+    }
+
+    /* Section */
+    section{
+      margin-top: 15px;
+    }
+
+    .section{
+      background: linear-gradient(180deg, rgba(167,139,250,.06), rgba(167,139,250,.02));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 15px;
+      margin-bottom: 12px;
+    }
+
+    .title{
+      display:flex; 
+      align-items:center; 
+      gap:8px;
+      font-size: 16px;
+      font-weight:700; 
+      margin: 0 0 10px 0;
+    }
+    .title .dot{ 
+      width:8px; 
+      height:8px; 
+      border-radius:999px; 
+      background: var(--accent); 
+      box-shadow:0 0 0 4px rgba(139,92,246,.18);
+    }
+    .title i {
+      margin-right: 8px;
+      color: var(--accent);
+      background: rgba(139, 92, 246, 0.15);
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 0.8rem;
+    }
+
+    .intro{
+      color: var(--muted);
+      font-size: 11px;
+      margin: 8px 0 0 0;
+    }
+
+    /* Hero card */
+    .hero{
+      background: radial-gradient(400px 200px at 80% -30%, rgba(139,92,246,.35) 0%, transparent 60%),
+                  linear-gradient(160deg, rgba(30, 18, 63, .8), rgba(25, 16, 50, .75));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 15px;
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 15px;
+      align-items:center;
+    }
+    .avatar{
+      width: 100px; 
+      height:100px; 
+      border-radius: 12px; 
+      overflow: hidden; 
+      border:2px solid #6b38cc;
+      box-shadow: 0 5px 15px rgba(139,92,246,.35);
+      justify-self: center;
+    }
+    .avatar img{ 
+      width:100%; 
+      height:100%; 
+      object-fit:cover; 
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .hero h1{ 
+      margin:0; 
+      font-size: 18px;
+      line-height: 1.2;
+    }
+    .hero h2{ 
+      margin:0; 
+      font-size: 13px; 
+      color:var(--accent-2); 
+      font-weight:600;
+    }
+
+    .chips{ 
+      display:flex; 
+      flex-wrap:wrap; 
+      gap:5px; 
+      margin-top:8px;
+    }
+    .chip{ 
+      padding:5px 10px; 
+      border-radius:999px; 
+      background: var(--chip-bg); 
+      border:1px solid var(--line); 
+      font-size:10px; 
+      color:var(--muted);
+    }
+
+    /* Projects */
+    .projects{ display:grid; gap:10px }
+    .project{
+      display:grid; 
+      gap:8px;
+      padding:12px; 
+      border:1px solid var(--line); 
+      border-radius:12px; 
+      background: rgba(28, 18, 56, .55);
+    }
+    .project .top{ 
+      display:flex; 
+      align-items:center; 
+      justify-content:space-between; 
+      gap:8px;
+      flex-wrap: wrap;
+    }
+    .project a{ 
+      color: var(--accent-2); 
+      text-decoration: underline; 
+      font-weight:600;
+      font-size: 11px;
+    }
+    .project p{ 
+      margin:0; 
+      color: var(--muted); 
+      font-size:11px;
+      line-height: 1.4;
+    }
+    .role{ 
+      color:#f59e0b; 
+      font-weight:600;
+      font-size: 11px;
+    }
+
+    /* Lists */
+    .list{ 
+      margin:8px 0 0 0; 
+      padding-left: 15px; 
+      color: var(--muted);
+      font-size: 11px;
+    }
+    .list li{ 
+      margin:4px 0;
+      line-height: 1.4;
+    }
+
+    /* Work cards */
+    .work{
+      display:grid; 
+      gap:10px;
+    }
+    .job{ 
+      border:1px solid var(--line); 
+      border-radius:12px; 
+      background: rgba(28, 18, 56, .55); 
+      padding:12px;
+      font-size: 11px;
+    }
+    .job h4{ 
+      margin:0; 
+      font-size:12px;
+      line-height: 1.4;
+    }
+    .company{ 
+      color: var(--accent-2); 
+      font-weight:700;
+    }
+    .period{ 
+      color:#bdb4ef; 
+      font-size:10px; 
+      margin:6px 0;
+    }
+    .place{ 
+      color:#bdb4ef;
+    }
+
+    /* Education */
+    .edu{ 
+      display:grid; 
+      gap:10px;
+    }
+    .school{ 
+      border:1px solid var(--line); 
+      border-radius:12px; 
+      background: rgba(28, 18, 56, .55); 
+      padding:12px;
+    }
+    .school h4{ 
+      margin:0; 
+      color: var(--accent-2);
+      font-size: 12px;
+    }
+    .school h5{ 
+      margin:4px 0; 
+      font-size:11px;
+    }
+    .school p{ 
+      margin:4px 0; 
+      color:#bdb4ef; 
+      font-size:10px;
+    }
+
+    /* Skill bars */
+    .skills-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-top: 12px;
+    }
+    
+    .skill-category {
+      margin-bottom: 12px;
+    }
+    
+    .skill-category h4 {
+      margin-bottom: 8px;
+      color: var(--accent-2);
+      font-size: 12px;
+    }
+    
+    .skill-item {
+      margin-bottom: 8px;
+    }
+    
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      font-size: 10px;
+      color: var(--muted);
+    }
+    
+    .skill-bar {
+      height: 5px;
+      background: var(--chip-bg);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    
+    .skill-level {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+    
+    /* Tech tags */
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 8px;
+    }
+    
+    .tech-tag {
+      background: var(--chip-bg);
+      color: var(--accent-2);
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 9px;
+      font-weight: 500;
+      border: 1px solid var(--line);
+    }
+
+    /* Contact info with icons */
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    
+    .contact-icon {
+      width: 28px;
+      height: 28px;
+      background: rgba(139, 92, 246, 0.15);
+      color: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 8px;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+    
+    .contact-text {
+      color: var(--muted);
+      font-size: 10px;
+    }
+    
+    .contact-text a {
+      color: var(--muted);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    /* Subtle divider */
+    .divider{ 
+      height:1px; 
+      background: linear-gradient(90deg, transparent, var(--line), transparent); 
+      margin: 15px 0;
+    }
+
+    /* Footer */
+    footer{ 
+      text-align:center; 
+      color:#bdb4ef; 
+      font-size:10px; 
+      padding: 15px 0 0 0;
+      margin-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* Two-column layout for A4 */
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    
+    .col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: white;
+        font-size: 10pt;
+      }
+      
+      .a4-container {
+        width: 100%;
+        height: 100%;
+        padding: 15mm;
+        margin: 0;
+        box-shadow: none;
+      }
+      
+      .section {
+        break-inside: avoid;
+      }
+      
+      .chip, .tech-tag {
+        break-inside: avoid;
+      }
+      
+      .hero {
+        break-inside: avoid;
+      }
+      
+      /* Hide non-essential elements for print */
+      .avatar {
+        border: 1px solid #6b38cc;
+      }
+      
+      a {
+        color: var(--accent) !important;
+        text-decoration: none !important;
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .a4-container {
+        width: 100%;
+        padding: 10px;
+      }
+      
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .avatar {
+        justify-self: center;
+      }
+      
+      .contact-info {
+        grid-template-columns: 1fr;
+      }
+      
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="a4-container">
+    <main class="container">
+
+      <!-- Header -->
+      <header class="header">
+        <div class="header-inner">
+          <div class="name">Veronika Petrushka</div>
+          <div class="badge">Fullstack & Mobile Developer · Data Science (Hons)</div>
+        </div>
+      </header>
+
+      <!-- Hero / About -->
+      <section id="about">
+        <div class="hero section">
+          <div class="avatar">
+            <img src="./image//cover.jpeg" alt="Veronika Petrushka" />
+          </div>
+          <div class="hero-content">
+            <h1>Fullstack & Mobile Developer</h1>
+            <h2>Junior Software Engineer · Junior Data Analyst</h2>
+            <p class="intro">
+              Data Science Graduate (BSc with Honours) with 1 year of professional experience as a Junior Software Engineer. 
+              Built and published 80+ iOS and ~20 Android apps end‑to‑end: concept, UI/UX, APIs, performance, 
+              deployments. Strong analytical mindset and practical DB knowledge (Python/SQL/PHP).
+            </p>
+            <div class="chips" aria-label="Core skills">
+              <span class="chip">React Native</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">React</span>
+              <span class="chip">Redux</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">Python</span>
+              <span class="chip">SQL</span>
+              <span class="chip">PHP</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Two-column layout for the rest -->
+      <div class="two-column">
+        <!-- Left column -->
+        <div class="col">
+          <!-- Work Experience -->
+          <section id="experience">
+            <div class="section">
+              <h3 class="title"><span class="dot"></span><i class="fas fa-briefcase"></i>Work Experience</h3>
+              <div class="work">
+                <article class="job">
+                  <h4>Junior Software Engineer Mobile · <span class="company">UPSTARS (Full‑time)</span></h4>
+                  <div class="period">Jan 2025 – Jul 2025 · 7 mos · <span class="place">Poland · Hybrid</span></div>
+                  <ul class="list">
+                    <li>Built and launched apps for the gambling industry optimizing performance and approvals (App Store/Google Play).</li>
+                    <li>Advanced UI/UX, React Native libraries, and tooling: Xcode, Android Studio, GitHub.</li>
+                    <li>Daily agile routines using Atlassian stack (Jira/Confluence, Scrum boards), stand‑ups, and collaborative problem‑solving.</li>
+                  </ul>
+                  <div class="tech-tags">
+                    <span class="tech-tag">React Native</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Xcode</span>
+                    <span class="tech-tag">Android Studio</span>
+                  </div>
+                </article>
+
+                <article class="job">
+                  <h4>Junior Software Engineer Mobile · <span class="company">Freelance | Self‑Employed</span></h4>
+                  <div class="period">Sep 2024 – Jan 2025 · 5 mos · <span class="place">Poland · Remote</span></div>
+                  <ul class="list">
+                    <li>Designed, developed, and deployed custom iOS apps end‑to‑end based on technical tasks.</li>
+                    <li>Created unique UI/UX and integrated tailored features to meet project goals.</li>
+                    <li>Managed the full app lifecycle: prototyping → testing → optimization → App Store submission.</li>
+                  </ul>
+                  <div class="tech-tags">
+                    <span class="tech-tag">React Native</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">iOS Development</span>
+                    <span class="tech-tag">UI/UX Design</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- Projects -->
+          <section id="projects">
+            <div class="section">
+              <h3 class="title"><span class="dot"></span><i class="fas fa-code"></i>Projects' Experience</h3>
+              <div class="projects">
+                <article class="project">
+                  <div class="top">
+                    <a href="https://github.com/VeronikaPetrushka?tab=repositories" target="_blank" rel="noreferrer">Mobile App Portfolio</a>
+                    <span class="role">Role: Junior Software Developer</span>
+                  </div>
+                  <p>
+                    Developed and published 100+ mobile applications (80+ iOS, 20+ Android) using React Native, TypeScript, and JavaScript. Projects ranged from loyalty apps and educational tools to entertainment and industry-specific solutions.
+                  </p>
+                  <p>
+                      Responsibilities included UI/UX design, API integration, performance optimization, and full lifecycle management from prototyping to App Store/Google Play release.
+                  </p>
+                  <div class="tech-tags">
+                    <span class="tech-tag">React Native</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">iOS</span>
+                    <span class="tech-tag">Android</span>
+                    <span class="tech-tag">UI/UX Design</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right column -->
+        <div class="col">
+          <!-- Skills & Languages -->
+          <section id="skills">
+            <div class="section">
+              <h3 class="title"><span class="dot"></span><i class="fas fa-cogs"></i>Skills</h3>
+              
+              <div class="skills-container">
+                <div class="skill-category">
+                  <h4>Technical Skills</h4>
+                  
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>React Native</span>
+                      <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-level" style="width: 90%;"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>JavaScript</span>
+                      <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-level" style="width: 85%;"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>HTML5/CSS3</span>
+                      <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-level" style="width: 90%;"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>TypeScript</span>
+                      <span>70%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-level" style="width: 70%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>REST API</span>
+                      <span>70%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-level" style="width: 70%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Python</span>
+                      <span>70%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-level" style="width: 70%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>SQL</span>
+                      <span>70%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-level" style="width: 70%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>PHP</span>
+                      <span>50%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-level" style="width: 50%;"></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="skill-category">
+                  <h4>Soft Skills</h4>
+                  
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Analytical thinking</span>
+                      <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-level" style="width: 90%;"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Teamwork</span>
+                      <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-level" style="width: 90%;"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Remote collaboration</span>
+                      <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-level" style="width: 90%;"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Project Management</span>
+                      <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-level" style="width: 80%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Communication</span>
+                      <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-level" style="width: 80%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Agile</span>
+                      <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-level" style="width: 80%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Proactive improvements</span>
+                      <span>70%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-level" style="width: 70%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="skill-item">
+                    <div class="skill-name">
+                      <span>Fast learning</span>
+                      <span>70%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-level" style="width: 70%;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="divider"></div>
+              <h3 class="title" style="margin-top:8px"><span class="dot"></span><i class="fas fa-language"></i>Languages</h3>
+              <div class="skills" aria-label="Languages">
+                <span class="chip">English — B2/C1</span>
+                <span class="chip">Polish — A2/B1</span>
+                <span class="chip">Ukrainian — Native</span>
+                <span class="chip">Russian — Native</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Education -->
+          <section id="education">
+            <div class="section">
+              <h3 class="title"><span class="dot"></span><i class="fas fa-graduation-cap"></i>Education</h3>
+              <div class="edu">
+                <div class="school">
+                  <h4>Lazarski University</h4>
+                  <h5>BA with Honours in Data Science</h5>
+                  <p>Oct 2022 – Jul 2025 · Warsaw, Poland</p>
+                </div>
+                <div class="school">
+                  <h4>GoIT — IT Academy</h4>
+                  <h5>Fullstack Developer</h5>
+                  <p>Aug 2023 – Jul 2024 · Online</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Contacts -->
+          <section id="contacts">
+            <div class="section">
+              <h3 class="title"><span class="dot"></span><i class="fas fa-address-card"></i>Contacts</h3>
+              <div class="contact-info">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <div class="contact-text">
+                    <a href="tel:+48733854947">+48 733 854 947</a>
+                  </div>
+                </div>
+                
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="contact-text">
+                    <a href="mailto:veronikapetrushka@gmail.com">veronikapetrushka@gmail.com</a>
+                  </div>
+                </div>
+                
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fab fa-linkedin"></i>
+                  </div>
+                  <div class="contact-text">
+                    <a href="https://www.linkedin.com/in/veronika-petrushka/" target="_blank">LinkedIn Profile</a>
+                  </div>
+                </div>
+                
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fab fa-github"></i>
+                  </div>
+                  <div class="contact-text">
+                    <a href="https://github.com/VeronikaPetrushka" target="_blank">GitHub Profile</a>
+                  </div>
+                </div>
+                
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="contact-text">
+                    Warsaw, Poland
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <footer>
+        © <span id="year"></span> Veronika Petrushka · Built with ❤️ in React Native spirit
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Current year only (no animations)
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
